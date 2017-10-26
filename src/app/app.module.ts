@@ -22,7 +22,7 @@ import { EqualValidator } from './module/equal-validator.directive';
   ],
   imports: [
     AppRouting,
-    BrowserModule
+    BrowserModule.withServerTransition({ appId: 'NgWebsite' })
   ],
   providers: [ContactService],
   bootstrap: [AppComponent],

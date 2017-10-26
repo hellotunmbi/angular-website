@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Meta, Title } from '@angular/platform-browser';
+
 import { Contact } from './contact.interface';
 
 import { ContactService } from './../../services/contact.service';
@@ -17,7 +19,16 @@ export class ContactComponent implements OnInit {
 
   result = false;
 
-  constructor(private contactService: ContactService) { }
+  constructor(private contactService: ContactService, meta: Meta, title: Title) { 
+
+    title.setTitle('Welcome to the simple Angular website with complex features');
+
+    meta.addTags([
+      { name: 'author', content: 'Tunmbi' },
+      { name: 'description', content: 'Description of the contact page goes in here' },
+      { name: 'keywords', content: 'angular, lazy loading, website' }
+    ]);
+  }
 
 
   saveForm() {
@@ -25,6 +36,7 @@ export class ContactComponent implements OnInit {
       this.result = true;
       console.log(this.result);
   }
+
 
   ngOnInit() {
     console.log(this.result);
