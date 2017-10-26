@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppRouting } from './app.routing';
 
+import { ContactService } from './services/contact.service';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './views/home/home.component';
 import { AboutComponent } from './views/about/about.component';
@@ -22,7 +24,7 @@ import { EqualValidator } from './module/equal-validator.directive';
     AppRouting,
     BrowserModule
   ],
-  providers: [],
+  providers: [ContactService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

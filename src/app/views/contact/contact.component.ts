@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Contact } from './contact.interface';
-// import { EqualValidator } from '../../equal-validator.directive';
+
+import { ContactService } from './../../services/contact.service';
 
 @Component({
   moduleId: module.id,
@@ -9,11 +10,24 @@ import { Contact } from './contact.interface';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css'],
 })
+
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  contact: any = {};
+
+  result = false;
+
+  constructor(private contactService: ContactService) { }
+
+
+  saveForm() {
+    this.contactService.saveContact(this.contact)
+      this.result = true;
+      console.log(this.result);
+  }
 
   ngOnInit() {
+    console.log(this.result);
   }
 
 }
