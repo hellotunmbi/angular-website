@@ -15,7 +15,7 @@ const appRoutes: Routes  = [
     },
     {
         path: 'contact',
-        component: ContactComponent
+        loadChildren: 'app/module/contact/contact.module#ContactModule'
     }
 ]
 
