@@ -5,16 +5,18 @@ import { AppRouting } from './app.routing';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './views/home/home.component';
-// import { ContactComponent } from './views/contact/contact.component';
 import { AboutComponent } from './views/about/about.component';
 import { NavComponent } from './reuse/nav/nav.component';
+
+import { EqualValidator } from './module/equal-validator.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    NavComponent
+    NavComponent,
+    EqualValidator
   ],
   imports: [
     AppRouting,
